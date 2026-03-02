@@ -1,0 +1,3 @@
+1.Give three examples, in different contexts, of abstract machines. For each
+example, can you identify primitives and what can take on the role of interpreter?
+Ans = 
