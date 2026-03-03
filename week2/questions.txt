@@ -1,3 +1,12 @@
 1.Give three examples, in different contexts, of abstract machines. For each
 example, can you identify primitives and what can take on the role of interpreter?
 Ans = 
+
+2.Describe the differences between the interpretative and compiled
+implementations of a programming language, emphasising the advantages and
+disadvantages.
+Ans =
+
+3. Explain in simple terms the relationship between variables being in scope, code
+blocks, and the stack.
+Ans=
