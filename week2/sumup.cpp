@@ -1,18 +1,15 @@
 #include<iostream>
 using namespace std;
 
-int sum(int n){
+int sumup_rec(int n){
     if (n==0){
         return 0;
     }
     else{
-        return n+sum(n-1);
+        return n+sumup_rec(n-1);
     }
 }
 
 int main(){
-    int n;
-    cout<<"enter a number up to which you want to calculate the sum: "<<endl;
-    cin>>n;
-    cout<<"the sum is: "<<sum(n)<<endl;
+    cout<<"the sum is: "<<sumup_rec(5)<<endl;
 }
