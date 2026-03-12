@@ -9,4 +9,19 @@ Ans =
 
 3. Explain in simple terms the relationship between variables being in scope, code
 blocks, and the stack.
-Ans=
+Ans=  Code blocks
+            A code blocks is simply a chunk of  of code grouped together. Many languages
+            like c/c++, java, python or JavaScript the blocks are surrounded by curley braces
+            {}. Functions or if else statements and loops.
+
+      Variables being in scope
+            A scope is a rule book that determines whether we are allowed to use a specific
+            variables in our code or not. For e.g: when we create a variable inside a block 
+            we can use that certain variables inside that block not outside that block.
+
+      The stack
+            A stack is the actual physical memory structure where the computer uses to 
+            store the rules of scope and code blocks. It works like a stack of books placed
+            in a box and we can place a next book on top, and we can only take off the plate
+            from top.(FILO or LIFO)
+
