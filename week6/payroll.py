@@ -19,6 +19,9 @@ class FullTimeEmployee(Employee):
     def calculate_payroll(self):
         return self.salary + self.bonus
 
+def display_info(self):
+    return f"Full-Time | Name: {self.name}, ID: {self.employee_id}, Salary: {self.salary},Bonus: {self.bonus}, Benefits: {self.benefits}"
+
 class PartTimeEmployee(Employee):
     def __init__(self, name, employee_id, hourly_rate, hours_worked):
         super().__init__(name, employee_id, hourly_rate)
@@ -26,4 +29,14 @@ class PartTimeEmployee(Employee):
 
     def calculate_payroll(self):
         return self.salary * self.hours_worked
+    
+def display_info(self):
+    return f"Part-Time | Name: {self.name}, ID: {self.employee_id}, Hourly Rate: {self.salary}, Hours Worked: {self.hours_worked}, Total Pay: {self.calculate_pay()}"
+    
+class Intern(Employee):
+    def __init__(self, name, employee_id, stipend):
+        super().__init__(name, employee_id, stipend)
+
+    def calculate_pay(self):
+        return self.salary
     
