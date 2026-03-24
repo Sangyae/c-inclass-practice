@@ -40,3 +40,15 @@ class Intern(Employee):
     def calculate_pay(self):
         return self.salary
     
+    def display_info(self):
+        return f"Intern | Name: {self.name}, ID: {self.employee_id}, Stipend: {self.salary}"
+    
+class Payroll:
+    def __init__(self):
+        self.employees = []
+    def add_employee(self, employee):
+        self.employees.append(employee)
+    def display_all_employees(self):
+        for employee in self.employees:
+            print(employee.display_info())
+    
