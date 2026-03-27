@@ -51,4 +51,44 @@ class Payroll:
     def display_all_employees(self):
         for employee in self.employees:
             print(employee.display_info())
+    def calculate_total_payroll(self):
+        total = 0
+        for employee in self.employees:
+            total += employee.calculate_pay()
+        return total
     
+    def sort_by_salary(self):
+        # if we want higher salary we can use reverse = True after calculate_pay with ,
+        self.employees.sort(key=lambda employee: employee.calculate_pay()) 
+
+    def generate_payslip(self):
+        for employee in self.employees:
+            print("\n--- PAY SLIP ---")
+            print(f"Employee Name : {employee.name}")
+            print(f"Employee ID   : {employee.employee_id}")
+            print(f"Employee Type : {employee.__class__.__name__}")
+            print(f"Total Pay     : {employee.calculate_pay()}")
+
+
+emp1 = FullTimeEmployee("Alice", "FT101", 4000, "Health Insurance", 500)
+emp2 = PartTimeEmployee("Bob", "PT102", 20, 80)
+emp3 = Intern("Charlie", "IN103", 1000)
+
+payroll = Payroll()
+
+payroll.add_employee(emp1)
+payroll.add_employee(emp2)
+payroll.add_employee(emp3)
+
+print("All Employees:")
+payroll.display_all_employees()
+
+print("\nTotal Payroll Expense:", payroll.calculate_total_payroll())
+
+payroll.sort_by_salary()
+
+print("\nEmployees Sorted by Salary:")
+payroll.display_all_employees()
+
+print("\nGenerating Pay Slips:")
+payroll.generate_payslip()
