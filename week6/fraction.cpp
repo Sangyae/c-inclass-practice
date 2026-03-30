@@ -42,7 +42,7 @@ public:
     }
 
     Fraction (float f){
-        const int precision = 10000; // 4 decimal places
+        const int precision = 10000;   // 4 decimal places after .
         num = static_cast<int>(f*precision);
         den = precision;
         simplify();
@@ -62,21 +62,20 @@ public:
         return Fraction(new_num, new_den);
     }
 
-                // Multiplication
+          // Multiplication
     friend Fraction operator*(const Fraction& f1, const Fraction& f2) {
         int new_num = f1.num * f2.num;
         int new_den = f1.den * f2.den;
         return Fraction(new_num, new_den);
     }
 
-                // Division
+         // Division
     friend Fraction operator/(const Fraction& f1, const Fraction& f2) {
         int new_num = f1.num * f2.den;
         int new_den = f1.den * f2.num;
         return Fraction(new_num, new_den);
     }
 
-                // Overload << operator for easy printing
     friend std::ostream& operator<<(std::ostream& os, const Fraction& f) {
         if (f.den == 1) {
             os << f.num; // Print as a whole number if denominator is 1
@@ -91,14 +90,13 @@ int main() {
     Fraction f1(1, 2);   // 1/2
     Fraction f2(3, 4);   // 3/4
     
-    std::cout << "--- Fraction Math ---" << std::endl;
+    std::cout << "--- Fraction ---" << std::endl;
     std::cout << f1 << " + " << f2 << " = " << (f1 + f2) << std::endl;
     std::cout << f1 << " - " << f2 << " = " << (f1 - f2) << std::endl;
     std::cout << f1 << " * " << f2 << " = " << (f1 * f2) << std::endl;
     std::cout << f1 << " / " << f2 << " = " << (f1 / f2) << std::endl;
 
-    std::cout << "\n--- Integer & Float Math ---" << std::endl;
-    // Because of our constructors, C++ implicitly converts the int and float!
+    std::cout << "\n--- Integer & Float ---" << std::endl;
     std::cout << f1 << " + 2 (int) = " << (f1 + 2) << std::endl; 
     std::cout << f1 << " * 1.5 (float) = " << (f1 * 1.5f) << std::endl;
     std::cout << "3.5 (float) - " << f2 << " = " << (3.5f - f2) << std::endl;
